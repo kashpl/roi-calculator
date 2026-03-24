@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROI Calculator | Investment Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Investment Analysis Tool</p>
+        <h1>ROI Calculator</h1>
+        <p class="hero-text">
+          Estimate return on investment, total profit and portfolio growth with a clean and professional simulator.
+        </p>
+      </div>
+    </header>
+
+    <section class="dashboard">
+      <div class="panel input-panel">
+        <h2>Simulation Inputs</h2>
+
+        <div class="field">
+          <label for="initial-investment">Initial Investment</label>
+          <input
+            type="number"
+            id="initial-investment"
+            min="0"
+            step="0.01"
+            placeholder="10000"
+            value="10000"
+          />
+        </div>
+
+        <div class="field">
+          <label for="monthly-contribution">Monthly Contribution</label>
+          <input
+            type="number"
+            id="monthly-contribution"
+            min="0"
+            step="0.01"
+            placeholder="500"
+            value="500"
+          />
+        </div>
+
+        <div class="field">
+          <label for="monthly-return">Monthly Return (%)</label>
+          <input
+            type="number"
+            id="monthly-return"
+            min="0"
+            step="0.01"
+            placeholder="1.5"
+            value="1.5"
+          />
+        </div>
+
+        <div class="field">
+          <label for="investment-period">Investment Period (Months)</label>
+          <input
+            type="number"
+            id="investment-period"
+            min="1"
+            step="1"
+            placeholder="24"
+            value="24"
+          />
+        </div>
+
+        <button id="calculate-button" class="main-button">Calculate ROI</button>
+
+        <div id="feedback" class="feedback hidden"></div>
+      </div>
+
+      <div class="panel results-panel">
+        <div class="results-header">
+          <div>
+            <p class="results-label">Estimated Final Balance</p>
+            <h2 id="final-balance">$0.00</h2>
+          </div>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <span>Total Invested</span>
+            <strong id="total-invested">$0.00</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Total Profit</span>
+            <strong id="total-profit">$0.00</strong>
+          </div>
+
+          <div class="result-card">
+            <span>ROI</span>
+            <strong id="roi-result">0%</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Average Monthly Gain</span>
+            <strong id="average-gain">$0.00</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel table-panel">
+      <div class="table-header">
+        <h2>Growth Projection</h2>
+        <p>Monthly breakdown of the simulated investment performance.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Start Balance</th>
+              <th>Contribution</th>
+              <th>Interest</th>
+              <th>End Balance</th>
+            </tr>
+          </thead>
+          <tbody id="projection-table-body">
+            <tr>
+              <td colspan="5" class="empty-state">
+                Run a simulation to see the monthly projection.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
