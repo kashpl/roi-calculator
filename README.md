@@ -8,7 +8,7 @@ This project simulates investment growth over time using a clean, dashboard-styl
 
 ## 🚀 Live Demo
 
-(Add your GitHub Pages link here after publishing)
+https://kashpl.github.io/roi-calculator/
 
 ---
 
